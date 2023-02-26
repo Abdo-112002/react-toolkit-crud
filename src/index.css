@@ -1,0 +1,21 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.cart {
+    @apply bg-cart h-[170px] 
+     self-stretch 
+     text-xl 
+     rounded-md 
+     flex flex-col items-center justify-center 
+     before:content-[""] before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-amber-500 before:to-yellow-600
+     overflow-hidden  
+     relative before:absolute
+}
+
+.cartWrapper {
+    @apply grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-5 gap-y-3
+}
+
