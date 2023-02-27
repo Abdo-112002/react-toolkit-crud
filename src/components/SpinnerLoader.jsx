@@ -3,9 +3,9 @@ import React from 'react';
 
 function SpinnerLoader() {
   return (
-    <div class="flex justify-center items-center  w-full  z-50 overflow-hidden ">
-    <div class="spinner-border animate-spin inline-block w-8 h-8 rounded-full" role="status">
-    <span class="visually-hidden">
+    <div className="flex justify-center items-center  w-full  z-50 overflow-hidden ">
+    <div className="spinner-border animate-spin inline-block w-8 h-8 rounded-full" role="status">
+    <span className="visually-hidden">
         <svg
         className="animate-spin -inline-block w-8 h-8 border-4 rounded-full"
         xmlns="http://www.w3.org/2000/svg"
