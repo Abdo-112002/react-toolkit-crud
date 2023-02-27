@@ -1,7 +1,7 @@
 
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './pages/Home';
 
 function App() {
   return (
@@ -50,11 +50,8 @@ function App() {
               </div>
           </section>
         </main>
-
         <Header/>
-        <Home/>
-
-
+        <Outlet/>
       </>
   );
 }
