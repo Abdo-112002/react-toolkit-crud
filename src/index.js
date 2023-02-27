@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+import { Provider } from 'react-redux';
+import rootStore from './store/rootStore';
 
 import {createBrowserRouter , RouterProvider} from 'react-router-dom';
 import Home from './pages/Home';
 import AddPost from './pages/AddPost';
 import EditPost from './pages/EditPost';
 import PostDetails from './pages/PostDetails';
+// import { getAllDataLoader } from './store/PostSlice';
 
 const routes = createBrowserRouter([
     {
@@ -17,11 +20,13 @@ const routes = createBrowserRouter([
       children : [
         {
           index : true,
-          element : <Home/>
+          element : <Home/>,
+          // loader : getAllDataLoader('http://localhost:5000/posts'),
         },
         {
           path : 'post',
-          element : <Home/>
+          element : <Home/>,
+          // loader : getAllDataLoader('http://localhost:5000/posts'),
         },
         {
           path : 'post/createPost',
@@ -45,9 +50,9 @@ const routes = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={routes}>
-     <App />
-  </RouterProvider>
+  <Provider store={rootStore}>
+    <RouterProvider router={routes}/>
+  </Provider>
 );
 
 

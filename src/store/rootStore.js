@@ -1,10 +1,13 @@
 
 
 import {configureStore} from '@reduxjs/toolkit';
+import { postReducer } from './PostSlice';
 
-
-export default configureStore({
-    reducers : {
-        
+const rootStore = configureStore({
+    reducer : {
+        posts : postReducer,
     }
 });
+
+
+export default rootStore;
