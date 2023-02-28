@@ -2,7 +2,8 @@
 import React from 'react'
 import PostItem from './PostItem'
 
-function DataTable({data}) {
+function DataTable({deleteRecord,data}) {
+    console.log("DataTable");
   return (
     <div className='container'>
         <div className='lg:w-[700px] w-full p-4 max-h-[700px]  m-auto overflow-auto'>
@@ -16,7 +17,7 @@ function DataTable({data}) {
                     </tr>
                     </thead>
                     <tbody>
-                        <PostItem posts={data}/>
+                        <PostItem deleteRecord={deleteRecord} posts={data}/>
                     </tbody>
                 </table>
             </div>
@@ -25,4 +26,4 @@ function DataTable({data}) {
   )
 }
 
-export default DataTable
+export default React.memo(DataTable);
