@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
 
 import { Provider } from 'react-redux';
 import rootStore from './store/rootStore';
 
-import {createBrowserRouter , RouterProvider} from 'react-router-dom';
-import Home from './pages/Home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddPost from './pages/AddPost';
 import EditPost from './pages/EditPost';
+import Home from './pages/Home';
 import PostDetails from './pages/PostDetails';
+import CheckParams from './UTIL/checkParams';
 // import { getAllDataLoader } from './store/PostSlice';
 
 const routes = createBrowserRouter([
@@ -38,7 +39,8 @@ const routes = createBrowserRouter([
         },
         {
           path : 'post/:id',
-          element : <PostDetails/>
+          element : <PostDetails/>,
+          loader : CheckParams
         },
       ]
     },

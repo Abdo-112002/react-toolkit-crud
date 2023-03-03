@@ -6,8 +6,8 @@ function DataTable({deleteRecord,data}) {
     console.log("DataTable");
   return (
     <div className='container'>
-        <div className='lg:w-[700px] w-full p-4 max-h-[700px]  m-auto overflow-auto'>
-            <div className="rounded-xl overflow-hidden border">
+        <div className='lg:w-[700px] w-full p-4 max-h-[700px]  m-auto overflow-hidden'>
+            <div className="rounded-xl  border overflow-auto">
                 <table className="table-auto text-center w-full">
                     <thead>
                     <tr className='bg-slate-100'>

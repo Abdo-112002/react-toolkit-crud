@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createPost } from '../store/PostSlice';
-import LoadingHOC from '../UTIL/LoadingHOC';
+
+import SpinnerLoader from "../components/SpinnerLoader";
 
 function AddPost() {
   const {loading , error} = useSelector((state)=> state.posts);
@@ -43,11 +44,9 @@ function AddPost() {
               </div>
 
               <div className="col-span-6 ">
-                
-                  <button className="flex disabled:opacity-5 mx-auto text-white bg-cyan-500 border-0 py-2 px-8 focus:outline-none transition duration-125 hover:bg-red-600 hover:shadow-2xl rounded text-lg" type="submit">
-                    AddPost
+                <button disabled={loading} className="flex disabled:opacity-70 mx-auto text-white bg-cyan-500 border-0 py-2 px-8 focus:outline-none transition duration-125 hover:bg-red-600 hover:shadow-2xl rounded text-lg" type="submit">
+                    {loading ? <> <SpinnerLoader/> <span>loading</span></> : 'AddPost'}
                   </button>
-      
               </div>
 
             </div>
