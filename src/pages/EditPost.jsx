@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SpinnerLoader from '../components/SpinnerLoader';
 import useFetchPost from '../hooks/use-fetch-post'
 import { updatePost } from '../store/PostSlice';
-import { protectEditPage } from '../UTIL/withGaurd';
+import { protectEditPage , protectUerAuth} from '../UTIL/withGaurd';
 
 
 function EditPost() {
@@ -91,4 +91,4 @@ function EditPost() {
   )
 }
 
-export default protectEditPage(EditPost)
+export default protectUerAuth(protectEditPage(EditPost))

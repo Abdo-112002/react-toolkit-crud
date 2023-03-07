@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { createPost } from '../store/PostSlice';
-
 import SpinnerLoader from "../components/SpinnerLoader";
+import { createPost } from '../store/PostSlice';
+import { protectUerAuth } from '../UTIL/withGaurd';
 
 function AddPost() {
   const {loading , error} = useSelector((state)=> state.posts);
@@ -56,4 +56,4 @@ function AddPost() {
   )
 }
 
-export default AddPost
+export default protectUerAuth(AddPost)

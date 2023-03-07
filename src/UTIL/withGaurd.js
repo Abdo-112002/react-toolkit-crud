@@ -10,4 +10,10 @@ export function protectEditPage(Component) {
   return Wrapper;
 }
 
-
+export function protectUerAuth(Component) {
+  const Wrapper = (props) => {
+    const {isLogin} = useSelector((state) => state.auth);
+    return isLogin ? <Component {...props}/> : <Navigate to='/'/>
+  }
+  return Wrapper;
+}

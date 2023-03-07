@@ -9,9 +9,11 @@ const POST_STATE = {
 };
 
 export const getAllPosts = createAsyncThunk('posts/getPosts',async (_ , thunkAPI ) => {
-    const {rejectWithValue } = thunkAPI;
+    const {rejectWithValue , getState} = thunkAPI;
+    const {auth} = getState();
+    const {userName , isLogin} = auth;
     try{
-        let res =  await fetch('http://localhost:5000/posts');
+        let res =  await fetch(isLogin ? `http://localhost:5000/posts?author=${userName}` : "http://localhost:5000/posts");
         let data = await res.json();
         return data;
     }catch(error){

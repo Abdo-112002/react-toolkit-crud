@@ -7,6 +7,10 @@ function PostItem({deleteRecord,posts}) {
 
     const navigate = useNavigate();
 
+    const handleDelete = (id) => {
+        deleteRecord(id);
+    }
+
     console.log("PostItem");
     let allPosts = posts?.map((item,ind)=>(
         <tr key={item.id}>
@@ -22,7 +26,7 @@ function PostItem({deleteRecord,posts}) {
                         update
                     </button>
                     <button 
-                        onClick={()=> deleteRecord(item.id)}
+                        onClick={()=> handleDelete(item.id)}
                         className='text-base capitalize select-none  rounded py-1 px-4 text-white bg-red-500'>
                         delete
                     </button>
