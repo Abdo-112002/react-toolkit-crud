@@ -2,6 +2,7 @@
 import React from 'react';
 
 function SpinnerLoader() {
+  console.log("loader")
   return (
     <div className="flex justify-center items-center  w-full  z-50 overflow-hidden ">
     <div className="spinner-border animate-spin inline-block w-8 h-8 rounded-full" role="status">

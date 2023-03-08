@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function PostItem({deleteRecord,posts}) {
@@ -43,4 +43,4 @@ function PostItem({deleteRecord,posts}) {
     return  allPosts
 }
 
-export default PostItem
+export default memo(PostItem)

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
+import ModalManager from './UTIL/ModalManegar';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           </section>
         </main>
         <Header/>
+        <ModalManager/>
         <Outlet/>
       </>
   );

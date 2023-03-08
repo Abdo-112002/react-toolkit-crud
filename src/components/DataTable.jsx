@@ -1,9 +1,16 @@
 
-import React from 'react'
-import PostItem from './PostItem'
+import React, { useMemo } from 'react';
+import PostItem from './PostItem';
 
 function DataTable({deleteRecord,data}) {
     console.log("DataTable");
+    const deleteItem =  useMemo(() => {
+        return deleteRecord;
+    }, [deleteRecord]);
+    const allItems =  useMemo(() => {
+        return data;
+    }, [data]);
+
   return (
     <div className='container'>
         <div className='lg:w-[700px] w-full p-4 max-h-[700px]  m-auto overflow-hidden'>
@@ -17,7 +24,7 @@ function DataTable({deleteRecord,data}) {
                     </tr>
                     </thead>
                     <tbody>
-                        <PostItem deleteRecord={deleteRecord} posts={data}/>
+                        <PostItem deleteRecord={deleteItem} posts={allItems}/>
                     </tbody>
                 </table>
             </div>
